@@ -11,8 +11,8 @@ public class Main {
         AgentContainer container = jade.core.Runtime.instance().createMainContainer(profile);
 
         try {
+        	AgentController gamemaster = container.createNewAgent("game-master", GameMasterAgent.class.getName(), null);
             AgentController guesser = container.createNewAgent("guesser", GuesserAgent.class.getName(), null);
-            AgentController gamemaster = container.createNewAgent("game-master", GameMasterAgent.class.getName(), null);
 
             guesser.start();
             gamemaster.start();
